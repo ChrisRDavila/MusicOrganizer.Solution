@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 
 
 
-namespace ProjectName.Controllers
+namespace MusicOrganizer.Controllers
 {
   public class HomeController : Controller
   {
-    [Route("/")]
-    // Notice the changes below!
-    public ActionResult File() { return View(); }
+    [HttpGet("/")]
+    public ActionResult Splash() 
+    { 
+      return View(); 
+    }
   }
 }

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Splash Page for Music Organizer!</title>
+    <link 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+      rel="stylesheet" 
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+      crossorigin="anonymous">
+  </head>
+  <body>
+    @using MusicOrganizer.Models;
+
+    <h1>Genres</h1>
+
+    @if (@Model.Count == 0)
+    {
+      <h3>No genres have been added yet!</h3>
+    } 
+
+    @foreach (Genre genre in Model)
+    {
+      <h3><a href='/genres/@genre.Id'>@genre.Name</a></h3>
+    }
+
+    <p><a href='/'>Back home</a></p>
+  </body>
+</html>
